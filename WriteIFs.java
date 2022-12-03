@@ -7,14 +7,29 @@
  */
 public class WriteIFs
 {
- 
+
+    int x;
+    int tt_t;
+    int tt_s;
+    int oo1, oo2;
+    String ss;
+
     public void playerDied(boolean player1) {
+        if (!isAlive(player1)) {
+
+            displayGameOver(player1);
+        }
         // Write an IF statement that checks “player1.isAlive()” 
         // and if that’s false, calls “displayGameOver(player1)”
      
     }
     
     public String thermoSTAT(int room) {
+        if(tempurature(room) < 70) {
+            heatOn();
+        } else {
+            coolOn();
+        }
         // Write an IF statement that checks the 
         // “temperature(room)” and if that check is less than 70, 
         // calls “heatOn()” else calls “coolOn()”
@@ -25,6 +40,9 @@ public class WriteIFs
     }
 
     public void fireplaceControl(Object fireplace1) {
+        if (outsideTemp() < 50 && insideTemp() < 62) {
+            startAFire(fireplace1);
+        }
         // Write an IF statement that checks 
         // “outsideTemp()” is less than 50 
         // AND 
@@ -34,24 +52,23 @@ public class WriteIFs
     }
 
     public void checkFuel(double fuelLevel) {
+        if (fuelLevel < 0.08) {
+            refuel();
+        }
         // Write an IF statement that checks “fuelLevel” 
         // and if that check is less than 0.08, calls “refuel()”
 
     }
 
 
-    
+
     /**
      *  Pay no attention to the code below this point.
      * 
      * 
      * instance variables
-     * / 
-   int x;
-   int tt_t;
-   int tt_s;
-   int oo1, oo2;
-   String ss;
+     * /
+
 
 
   /**
